@@ -121,7 +121,7 @@ class Student:
         else:
             return False
     def __str__(self):
-        return f"NAME: {self.name} ; MARKS :{self.marks}"
+        return f"NAME: {self.name} ; MARKS :{self.marks}\n"
 
 stud1=Student("Radek",40)
 stud2=Student("Wojtek",70)
