@@ -21,7 +21,7 @@ class Library:
         self.phone=phone
 
     def __str__(self):
-        return f"CITY: {self.city} ; STREET: {self.street} ; ZIP_CODE: {self.zip_code} ; OPEN_HOURS: {self.open_hours} ; PHONE:{self.phone}"
+        return f"CITY: {self.city} ; STREET: {self.street} ; ZIP_CODE: {self.zip_code} ; OPEN_HOURS: {self.open_hours} ; PHONE:{self.phone}\n"
 
 '''Order (klasa opisująca zamówienie), posiadająca pola:
 employee
@@ -37,7 +37,7 @@ class Order:
         self.order_date=order_date
 
     def __str__(self):
-        return f"EMPLOYEE {self.employee} ; STUDENT: {self.student} ; BOOKS: {self.books} ; ORDER_DATE: {self.order_date}"
+        return f"EMPLOYEE {self.employee} ; STUDENT: {self.student} ; BOOKS: {self.books} ; ORDER_DATE: {self.order_date}\n"
 
 '''Employee (klasa opisująca pracownika biblioteki), posiadająca pola:
 first_name
@@ -63,7 +63,7 @@ class Employee:
 
     def __str__(self):
         return f"F_NAME: {self.first_name} ; L_NAME: {self.last_name} ; H_DATE: {self.hire_date} ; B_DATE: {self.birth_date} ; PHONE:{self.phone} " \
-                      f"CITY: {self.city} ; STREET: {self.street} ; ZIP_CODE: {self.zip_code} ; PHONE:{self.phone}"
+                      f"CITY: {self.city} ; STREET: {self.street} ; ZIP_CODE: {self.zip_code} ; PHONE:{self.phone}\n"
 
 
 '''Book (klasa opisująca książkę), posiadająca pola
@@ -82,7 +82,7 @@ class Book:
         self.number_of_pages=number_of_pages
 
     def __str__(self):
-        return f"LIBRARY: {self.library} ; PUB_DATE: {self.publication_date} ; AUTOR_NAME: {self.author_name} ;AUTOR_SURNAME: {self.author_surname} ; NUMER_OF_PAGES:{self.number_of_pages}"
+        return f"LIBRARY: {self.library} ; PUB_DATE: {self.publication_date} ; AUTOR_NAME: {self.author_name} ;AUTOR_SURNAME: {self.author_surname} ; NUMER_OF_PAGES:{self.number_of_pages}\n"
 
 '''Stworzyć 2 biblioteki (2 instancje klasy), 5 książek, 3 pracowników, 3 studentów, oraz 2 zamówienia.
 Wyświetlić oba zamówienia ( print )'''
