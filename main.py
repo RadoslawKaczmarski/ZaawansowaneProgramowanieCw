@@ -1,32 +1,18 @@
 import cv2
-import imutils
+from Pedestrian_detection import show_image
+import os
 
-# Initializing the HOG person
-# detector
-hog = cv2.HOGDescriptor()
-hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+directory = 'Zdjecia'
 
-# Reading the Image
-image = cv2.imread('Zdjecia/a1.jpg')
+L1 = []
+for filename in os.listdir(directory):
+    f = os.path.join(directory, filename)
+    L1.append(f)
 
-# Resizing the Image
-#image = imutils.resize(image,
-                     #  width=min(400, image.shape[1]))
+labelsPathText = "Models/coco.names"
+weights_path_text = "Models/yolov4-tiny.weights"
+config_path_text = "Models/yolov4-tiny.cfg"
 
-# Detecting all the regions in the
-# Image that has a pedestrians inside it
-(regions, _) = hog.detectMultiScale(image,
-                                    winStride=(4, 4),
-                                    padding=(3, 3),
-                                    scale=1.05)
-
-# Drawing the regions in the Image
-for (x, y, w, h) in regions:
-    cv2.rectangle(image, (x, y),
-                  (x + w, y + h),
-                  (0, 0, 255), 2)
-
-# Showing the output Image
-cv2.imshow("Image", image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+for image in L1:
+    show_image(labels_path=labelsPathText, weights_path=weights_path_text,
+               config_path=config_path_text, image=cv2.imread(image))
